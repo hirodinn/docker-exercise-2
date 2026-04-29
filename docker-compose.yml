@@ -1,0 +1,13 @@
+services:
+  web-app:
+    build: .
+    image: nodemon-app
+    container_name: nodemon
+    ports:
+      - "4000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    # This replaces the --rm flag logic
+    stdin_open: true 
+    tty: true
